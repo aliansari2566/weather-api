@@ -21,7 +21,7 @@ app.get("/", async function(req, res){
    const temp = response.main.temp;
    const weatherdescription = response.weather[0].description;
 //    console.log(temp); 
-res.write()
+res.write(`<p> The weather is currently ${weatherdescription}</p>`)
    res.write(`<h1> the weather is london  ${temp}  degree calcius. </h1>`)
 
 } )
