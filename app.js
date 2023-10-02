@@ -21,11 +21,11 @@ app.get("/", async function(req, res){
    const temp = response.main.temp;
    const weatherdescription = response.weather[0].description;
    const icon = response.weather[0].icon
-   const imageUrl = "http://openweathermap.org/img/wn/" + icon + "10d@2x.png"
+   const imageUrl = "http://openweathermap.org/img/wn/" + icon + "@2x.png"
 //    console.log(temp); 
 res.write(`<p> The weather is currently ${weatherdescription}</p>`)
    res.write(`<h1> the weather is london  ${temp}  degree calcius. </h1>`)
-   res.write()
+   res.write(`<img src="${imageUrl}">`)
 
 } )
 
