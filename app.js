@@ -4,17 +4,27 @@ const axios = require("axios");
 const app = express();
 
 async function fetchweather() {
-  const res = await axios.get(
-    "https://api.openweathermap.org/data/2.5/weather?q=london&appid=72226912565ed619f1d5661ec8b087a6&units=metric"
-  );
-  const weatherdata = res.data;
-  const contentType = res.headers['content-type'];
-  console.log('Content-Type:', contentType);
-  return weatherdata;
-
-  // console.log(res.statusCode)
-
-  // setMovieResponse(res.data.results)
+   
+   try {
+      const res = await axios.get(
+         "https://api.openweathermap.org/data/2.5/weather?q=london&appid=72226912565ed619f1d5661ec8b087a6&units=metric"
+       );
+       const contentType = res.headers['content-type'];
+       console.log('Content-Type:', contentType);
+       
+     //   If the Content-Type is set to application/json, Axios will parse the response body as JSON, and you can directly access it as a JavaScript object.
+     
+       const weatherdata = res.data;
+     
+       return weatherdata;
+     
+       // console.log(res.statusCode)
+     
+       // setMovieResponse(res.data.results)
+   } catch (error) {
+      
+   }
+ 
 }
 
 app.get("/", async function (req, res) {
