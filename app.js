@@ -24,7 +24,7 @@ app.get("/", async function (req, res) {
   const imageUrl = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
   //    console.log(temp);
   res.write(`<p> The weather is currently ${weatherdescription}</p>`);
-  res.write(`<h1> the weather is london  ${temp}  degree calcius. </h1>`);
+  res.write(`<h1> the weather in london is  ${temp}  degree calcius. </h1>`);
   res.write(`<img src="${imageUrl}">`);
   res.send();
 });
