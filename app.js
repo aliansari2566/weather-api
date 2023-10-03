@@ -5,10 +5,11 @@ const bodyParser = require("body-parser");
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 
-async function fetchweather(city) {
+  async function fetchweather(city) {
+   const query = city;
   const apikey = "72226912565ed619f1d5661ec8b087a6";
   const units = "metric";
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&units=${units}`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=${apikey}&units=${units}`;
   try {
     const res = await axios.get(url);
     const contentType = res.headers["content-type"];
