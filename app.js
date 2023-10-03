@@ -5,10 +5,13 @@ const app = express();
 
 async function fetchweather() {
    
+   const query ="london";
+   const apikey = "72226912565ed619f1d5661ec8b087a6"; 
+   const units = "metric";
+   const url = `https://api.openweathermap.org/data/2.5/weather?q=${query} &appid=${apikey}&units=${units}`
+  
    try {
-      const res = await axios.get(
-         "https://api.openweathermap.org/data/2.5/weather?q=london&appid=72226912565ed619f1d5661ec8b087a6&units=metric"
-       );
+      const res = await axios.get( url );
        const contentType = res.headers['content-type'];
        console.log('Content-Type:', contentType);
        
